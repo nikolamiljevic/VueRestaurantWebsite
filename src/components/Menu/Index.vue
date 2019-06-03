@@ -25,12 +25,13 @@ export default {
                 {name:'burgers', active:false},
                 {name:'salat', active:false},
                 {name:'dessert', active:false}
-            ]
+            ],
+            products:[]
         }
     },
     methods:{
         changeMenu(value){
-            this.buttons.forEach( item => {
+            this.buttons.forEach( item =>{
                 if(item.name == value){
                     item.active = true;
                 }else{
@@ -38,6 +39,21 @@ export default {
                 }
             })
         }
-    }
+    },
+        created(){
+            this.$http.get('products.json')
+            .then( response => response.json())
+            .then( data => {
+               let list = [];
+
+                for(let key in data){
+                    list.push({
+                        ...data[key],
+                        id:key
+                    })
+                }
+                this.products = list
+            })
+        }
 }
 </script>
