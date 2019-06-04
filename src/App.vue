@@ -5,6 +5,7 @@
       <comp-featured/>
       <comp-menu/>
       <comp-call-us/>
+      <comp-newsletter/>
     </div>
   <comp-footer/>
 </div>
@@ -16,7 +17,8 @@ import compHeader from './components/Header-footer/Header.vue';
 import compFooter from './components/Header-footer/Footer.vue';
 import compFeatured from './components/Featured/Index.vue';
 import compMenu from './components/Menu/Index.vue';
-import compCallUs from './components/CallUs/Index.vue'
+import compCallUs from './components/CallUs/Index.vue';
+import compNewsletter from './components/Newsletter/Index.vue';
 
 export default{
   components:{
@@ -24,7 +26,8 @@ export default{
     compFooter,
     compFeatured,
     compMenu,
-    compCallUs
+    compCallUs,
+    compNewsletter
   }
 }
 </script>
